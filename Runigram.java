@@ -107,7 +107,7 @@ public class Runigram {
 	// lum = 0.299 * r + 0.587 * g + 0.114 * b, and returns a Color object consisting
 	// the three values r = lum, g = lum, b = lum.
 	private static Color luminance(Color pixel) {
-		int sum = (int) Math.round(pixel.getRed()*0.299 + pixel.getGreen()*0.587 + pixel.getBlue()*0.114) ;
+		int sum = (int) (pixel.getRed()*0.299 + pixel.getGreen()*0.587 + pixel.getBlue()*0.114) ;
 		Color ncolor = new Color( sum, sum, sum);
 		return ncolor;
 	}
@@ -155,9 +155,9 @@ public class Runigram {
 	 */
 	public static Color blend(Color c1, Color c2, double alpha) {
 
-		int newR = (int) Math.round(c1.getRed()*alpha + c2.getRed()*(1 - alpha));
-		int newG = (int) Math.round(c1.getGreen()*alpha + c2.getGreen()*(1 - alpha));
-		int newB =(int) Math.round(c1.getBlue()*alpha + c2.getBlue()*(1 - alpha));
+		int newR = (int) (c1.getRed()*alpha + c2.getRed()*(1 - alpha));
+		int newG = (int) (c1.getGreen()*alpha + c2.getGreen()*(1 - alpha));
+		int newB =(int) (c1.getBlue()*alpha + c2.getBlue()*(1 - alpha));
 		return new Color(newR, newG, newB);
 	}
 	
